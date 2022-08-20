@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Your Forms</h1>
+{%if t.count()==0%}
+<h2>no forms</h2>
+{%else%}
+{%for i in t%}
+<div class="section" onclick="window.location.href='{{url_for('view',fid=i.id)}}'">
+{{i.title}}
+</div>
+{%endfor%}
+{%endif%}
+{% endblock content %}

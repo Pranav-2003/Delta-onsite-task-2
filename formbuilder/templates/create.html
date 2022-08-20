@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 id="head">Create Your Form...</h2>
+<br>
+<button class="dropbtn" onclick="q()"> Add question </button>
+<div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Add answer type</button>
+        <div id="myDropdown" class="dropdown-content">
+          <p onclick="t()">Text Field</p>
+          <p onclick="d()">Date</p>
+          <p onclick="ch()">Checkbox</p>
+        </div>
+</div><br><br><br>
+<form id="form" method="POST" action="{{url_for('store')}}">
+<div style="font-size:1.5rem;">
+  <span>Enter Title:</span>
+  <input type="text" name="hl"><br><br><br>
+</div>
+  <input type="submit" name="submit" value="Save Form"><br><br>    
+</form>
+{% endblock %}
+

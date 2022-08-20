@@ -1,0 +1,18 @@
+{%extends 'layout.html'%}
+{%block content%}
+<h1>{{t.title}}</h1><br>
+{%for que in q%}
+{{que.data}}
+{%for re in que.reply%}
+{%if re.qid==que.sno%}
+{%if re.data=="textfield"%}
+{{form.tf}}<br>
+{%elif re.data=="date"%}
+{{form.d}}<br>
+{%else%}
+{{form.cb}}<br>
+{%endif%}
+{%endif%}
+{%endfor%}
+{%endfor%}
+{%endblock%}
